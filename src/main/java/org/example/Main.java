@@ -1,11 +1,21 @@
 package org.example;
 
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         // System.out.println(sum(500_000_000));
         // simple(100);
+        HashTable ht = new HashTable();
+        for(int i = 0; i<10;i++){
+            ht.add(i,i*i);
+        }
+        ht.print();
+        ht.add(150,45);
+        ht.del(5);
+        ht.print();
+
+        System.out.println(ht.find(150));
+        System.out.println(ht.find(143));
     }
     public static void sort(int[] array){
         // Построение кучи(перегруппируем массив)

@@ -4,9 +4,9 @@ package org.example;
 /*
 Связные списки
  */
-public class Lists {
+public class Lists{
     static Node head;
-    static Node tails;
+    static Node tail;
 
     public static void main(String[] args) {
         Node node = new Node();
@@ -39,7 +39,7 @@ public class Lists {
             node.next = newNode;
             newNode.previos = node;
             if (next == null) {
-                tails = newNode;
+                tail = newNode;
             } else {
                 next.previos = newNode;
                 newNode.next = next;
@@ -56,11 +56,11 @@ public class Lists {
             node.value = value;
             if (head == null) {
                 head = node;
-                tails = node;
+                tail = node;
             } else {
-                tails.next = node;
-                node.previos = tails;
-                tails = node;
+                tail.next = node;
+                node.previos = tail;
+                tail = node;
             }
         }
 
@@ -76,7 +76,7 @@ public class Lists {
             } else {
                 if (next == null) {
                     previous.next = null;
-                    tails = previous;
+                    tail = previous;
                 } else {
                     previous.next = next;
                     next.previos = previous;
@@ -110,7 +110,7 @@ public class Lists {
                 currentNode.next = previous;
                 currentNode.previos = next;
                 if (previous == null) {
-                    tails = currentNode;
+                    tail = currentNode;
                 }
                 if (next == null) {
                     head = currentNode;
